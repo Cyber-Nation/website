@@ -8,9 +8,9 @@ const express = require('express');
 const app = express();
 
 // Certificate
-const privateKey = fs.readFileSync('/etc/letsencrypt/live/www.cyber-nation.com/privkey.pem', 'utf8');
-const certificate = fs.readFileSync('/etc/letsencrypt/live/www.cyber-nation.com/cert.pem', 'utf8');
-const ca = fs.readFileSync('/etc/letsencrypt/live/www.cyber-nation.com/chain.pem', 'utf8');
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/www.cyber-nation.fr/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/www.cyber-nation.fr/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/www.cyber-nation.com/chain.fr', 'utf8');
 
 const credentials = {
 	key: privateKey,
