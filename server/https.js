@@ -4,6 +4,8 @@ const morgan = require( 'morgan' )
 const fs = require( 'fs' )
 const https = require( 'https' )
 const express = require( 'express' )
+const cookie_parser = require( 'cookie-parser' )
+const body_parser = require( 'body-parser' )
 
 console.log( process.env.npm_package_version, process.env.NODE_ENV )
 
@@ -12,10 +14,15 @@ const app = express()
 
 //Middlewares
 app.use( morgan( 'dev' ) )
+app.use( cookie_parser() )
+app.use( body_parser.json() )
+
+//Routes
 app.use( express.static( 'public' ) )
+app.use( '/api', require( './api' ) )
 
 app.use( ( req, res ) => {
-	res.send( 'Hello there !' )
+	res.send( 'Cyber-Nation !' )
 } )
 
 //SERVEUR HTTPS

@@ -58,11 +58,13 @@ span.cn {
     font-weight: bold;
 }
 
-span.button {
+a.button {
     cursor: pointer ;
-    color: pink ;
+    color: red ;
+    transition: letter-spacing 0.5s ;
 }
-    span.button:hover {
+    a.button:hover {
         color: red ;
-        transition: color 1s ;
+        letter-spacing: 1px ;
+        transition: letter-spacing 1s ;
     }
