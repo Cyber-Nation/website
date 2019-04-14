@@ -136,7 +136,7 @@ router.post( '/validate', [
     if ( validated ) {   
         let jwt = user.generateJWT()
         console.log( 'JWT =', jwt )
-        res.cookie( 'JWT', jwt /*, { httpOnly: true, secure: true } */)
+        res.cookie( 'JWT', jwt, { httpOnly: true, secure: true, sameSite: true, maxAge: 2592000000 } )
         res.status( 200 ).send( { message: 'OK' } )    
     }
     else
