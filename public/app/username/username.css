@@ -1,0 +1,24 @@
+a.button {
+    cursor: pointer ;
+    color: palevioletred ;
+    transition: all 0.5s ;
+    font-weight: 500 ;
+}
+    a.button:hover {
+        color: red ;
+        letter-spacing: 1px ;
+        transition: letter-spacing 1s ;
+        transition: all 1s ;
+    }
+
+a.user {
+    color: lightgreen ;
+    transition: all 0.5s ;
+    cursor: pointer ;
+}
+    a.user:hover {
+        color: greenyellow ;
+        letter-spacing: 1px ;
+        transition: letter-spacing 1s ;
+        transition: all 1s ;
+    }

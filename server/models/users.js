@@ -20,14 +20,20 @@ class User {
         }, process.env.JWT_SECRET )
     }
 
+    toJSON() {
+        const { email, firstname, lastname } = this
+        return { email, firstname, lastname }
+    }
+
     async save() {
-        let user = { email: this.email }
+        let user = this.toJSON()
         return redis.hmset( 'user:' + this.email, user )
     }
 
     async save_secret( secret ) {
         return redis.hmset( 'user:' + this.email, { secret: secret } )
     }
+
 }
 
 class Users {

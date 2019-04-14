@@ -3,28 +3,41 @@ html {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
-    background-color: var(--blue) ;
-    color: rgba(255, 255, 255, 0.7) ;
-    font-size: 100% ;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--blue);
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500 ;
 }
 
 header {
    /* width: 300px ; */
-   display: inline-block ;
+   display: flex ;
+   align-content: center ;
+   flex-direction: column ;
+   
 }
-
-marquee {
-    color: red ;
-    font-weight: 500 ;
-}
+    user-name {
+        text-align: right ;
+        right: 0 ; 
+        margin-right: 10px ;
+        display: block ;
+        height: 15px ; 
+    }
+    marquee {
+        color: palevioletred ;
+        font-weight: 600 ;
+        font-size: 14pt ;
+    }
+    header > h1 {
+        text-align: center ;
+    }
 
 h1, h2 {
     color: whitesmoke;
 }
 
 h1 {
-    margin: 20px 0 10px;
+    margin: 10px 0 10px;
     font-size: 35pt ;
     transition: letter-spacing 0.5s ease-out;
     letter-spacing: initial ;
@@ -41,6 +54,7 @@ section:not(:first) {
 
 h2 { 
     margin: 30px 0 10px 0;
+    letter-spacing: 1px
 }
 
 h2::first-letter {
@@ -49,10 +63,20 @@ h2::first-letter {
 
 ol {
     margin: 5px;
+    counter-reset: li;
 }
     li:hover {
         color: white;
     }
+
+    ol > li {
+        list-style-type: none ;
+        counter-increment: li
+    }
+    ol > li::before {
+        content: counter(li); 
+        display: inline-block; width: 1em; margin-left: -1.5em;
+        margin-right: 0.5em; text-align: right; direction: rtl}
 
 span.cn {
     font-weight: bold;
@@ -60,11 +84,13 @@ span.cn {
 
 a.button {
     cursor: pointer ;
-    color: red ;
-    transition: letter-spacing 0.5s ;
+    color: palevioletred ;
+    transition: all 0.5s ;
+    font-weight: 500 ;
 }
     a.button:hover {
         color: red ;
         letter-spacing: 1px ;
         transition: letter-spacing 1s ;
+        transition: all 1s ;
     }

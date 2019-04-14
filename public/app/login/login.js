@@ -1,6 +1,4 @@
 var css = import.meta.url.replace( '.js', '.css' )
-console.debug( css )
-
 
 class LogIn extends HTMLElement {
     constructor() {
@@ -82,6 +80,10 @@ class LogIn extends HTMLElement {
             if ( res.status === 200 ) {
                 output.textContent = ''
                 success.textContent = 'Vous êtes connecté !'
+                document.dispatchEvent( new CustomEvent( 'updated', {
+                    detail: { email: email.value },
+                    bubble: true 
+                } ) )
                 setTimeout( () => this.parentElement.removeChild( this ), 1000 )
                 
             }

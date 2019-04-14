@@ -27,7 +27,7 @@ router.get( '/current', auth.required, ( req, res, next ) => {
         if ( !user )
             return res.sendStatus( 400 )
         
-        return res.json( { user: user.toAuthJSON() } )
+        return res.json( user.toJSON() )
     } )
 } )
 
@@ -142,6 +142,50 @@ router.post( '/validate', [
     else
         res.status( 401 ).send( { error: 'Code de valisation erroné' } )    
 
+} )
+
+//Profil
+router.get( '/profile', auth.required, async ( req, res ) => {
+    console.log( 'get /profile' )
+    const { payload: { email } } = req
+
+    let user = await Users.findOne( email )
+
+    if ( !user )
+        res.sendStatus( 422 )
+    
+    res.json( user.toJSON() )
+} ) 
+
+//Mise à jour
+router.post( '/update', 
+    [ 
+        check( 'firstname' ).isLength( { min: 0, max: 30 } ).withMessage( 'Nombre de caractères incorrect' ),
+        check( 'firstname' ).isAlpha( 'fr-FR' ).withMessage( 'Seulement des lettre de l\'alphabet' )
+    ], 
+    auth.required, 
+    async ( req, res ) => {
+    console.log( 'post /update' )
+    const errors = validationResult( req )
+    if ( !errors.isEmpty() ) 
+        return res.status( 422 ).json( errors.array() )
+    
+
+    const { payload: { email } } = req
+    const { body: { firstname } } = req
+    
+    let user = await Users.findOne( email )
+    if ( user ) {
+        user.firstname = firstname
+        var r = await user.save()
+        if ( r )
+            res.sendStatus( 200 )
+        else
+            res.sendStatus( 204 )
+    }
+    else {
+        res.sendStatus( 422 )
+    }
 } )
 
 module.exports = router

@@ -1,6 +1,4 @@
 //Connexion
-import LogIn from '/app/login/login.js'
+import '/app/username/username.js'
 
-connect.onclick = ev => 
-    document.body.appendChild( new LogIn )
 
