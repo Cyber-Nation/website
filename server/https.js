@@ -21,9 +21,18 @@ app.use( body_parser.json() )
 app.use( express.static( 'public' ) )
 app.use( '/api', require( './api' ) )
 
-app.use( ( req, res ) => {
-	res.send( 'Cyber-Nation !' )
+//Erreur d'authentification
+app.use( ( err, req, res, next ) => {
+	switch ( err.name ) {
+		case 'UnauthorizedError':
+			res.status( 401 ).send( 'Jeton invalide' )
+			break
+		default:
+			console.error( '***', err )
+			res.sendStatus( 500 )
+	} 
 } )
+  
 
 //SERVEUR HTTPS
 

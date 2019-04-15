@@ -3,10 +3,8 @@ const jwt = require( 'express-jwt' )
 
 const getTokenFromHeaders = req => {
     var jwt = req.cookies.JWT
-    console.log( 'getTokenFromHeaders' , jwt )
     if ( jwt ) 
         return jwt    
-    return null
 }
 
 const auth = {

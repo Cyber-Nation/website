@@ -18,7 +18,7 @@ class UserProfile extends HTMLElement {
                         <input type="text" spellcheck="false" name="firstname" id="firstname">
                     </article>
                 </section>
-                <button id="close">X</button>
+                <button id="close">x</button>
             `
     }   
 
