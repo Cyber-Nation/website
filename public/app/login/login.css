@@ -14,7 +14,7 @@ section {
     border: 10px solid white ;
     display: inline-block ;
     background-color: white ;
-    color: var(--blue) ;
+    color: var(--back) ;
     letter-spacing: initial ;
 
 }
@@ -41,7 +41,7 @@ button {
     border: 1px solid lightblue ;
     font-family: inherit ;
     font-size: inherit ;
-    color: var(--blue) ;
+    color: var(--back) ;
     cursor: pointer ;
     margin: 0 ;
     height: 35px ;
@@ -52,8 +52,8 @@ button {
 input {
     border: 1px solid lightblue ;
     font-family: inherit ;
-    color: var(--blue) ;
-    padding: 5px 0 ;
+    color: var(--back) ;
+    padding: 5px 5px ;
     margin: 0 15px ;
     height: 35px ;
     font-size: inherit ;

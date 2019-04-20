@@ -1,0 +1,41 @@
+<!---link rel="stylesheet" href="user-profile.css"-->
+<h2>Identité</h2>
+<table>
+    <!--tr>
+        <td><label for="email">E-mail</label>
+        <td><input type="text" readonly name="email" id="email">
+    -->
+    <tr>
+        <td><label>Sexe</label>
+        <td>
+            <label for=F>Féminin</label>
+            <input type=radio id=F name=sex value=F>
+            <label for=M>Masculin</label>
+            <input type=radio id=M name=sex value=M>
+    <tr>
+        <td><label for="lastname">Nom</label>
+        <td><input type="text" spellcheck="false" name="lastname" id="lastname">
+    <tr>
+        <td><label for="firstname">Prénom</label>
+        <td><input type="text" spellcheck="false" name="firstname" id="firstname">
+    <tr>
+        <td><label for="birthDay">Date de naissance</label>
+        <td>
+            <input type=number name=birthDay id=birthDay min=1 max=31>
+            <input type=number name=birthMonth id=birthMonth min=1 max=12>
+            <input type=number name=birthYear id=birthYear min=1901 max=2013>
+</table>
+
+<h2>Bureau de vote</h2>
+<table>
+    <tr>
+        <td><label for="dpt">Département</label>
+        <td><input type="number" name="dpt" id="dpt">
+    <tr>
+        <td><label for="city">Commune</label>
+        <td><input type="text" spellcheck="false" name="city" id="city">
+    <tr>
+        <td><label for="station">Numéro de bureau</label>
+        <td><input type="text" spellcheck="false" name="station" id="station">
+</table>
+<button id="close">x</button>

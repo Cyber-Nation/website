@@ -16,6 +16,7 @@ customElements.define( 'user-name', class extends HTMLElement {
 
     async connectedCallback() {
         await this.connect()
+        document.addEventListener( 'updated', this )                      
     }
 
     async connect() {
@@ -41,7 +42,6 @@ customElements.define( 'user-name', class extends HTMLElement {
                 output.querySelector( 'a.button' )
                     .onclick = () => {
                         document.body.appendChild( new LogIn )  
-                        document.addEventListener( 'updated', this, true )                      
                     }
                 break
 

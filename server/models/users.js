@@ -21,8 +21,8 @@ class User {
     }
 
     toJSON() {
-        const { email, firstname, lastname } = this
-        return { email, firstname, lastname }
+        const { email, firstname, lastname, sex, birthDay, birthMonth, birthYear, dpt, city, station } = this
+        return { email, firstname, lastname, sex, birthDay, birthMonth, birthYear, dpt, city, station }
     }
 
     async save() {

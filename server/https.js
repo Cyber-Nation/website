@@ -6,6 +6,7 @@ const https = require( 'https' )
 const express = require( 'express' )
 const cookie_parser = require( 'cookie-parser' )
 const body_parser = require( 'body-parser' )
+const compression = require( 'compression' ) 
 
 console.log( process.env.npm_package_version, process.env.NODE_ENV )
 
@@ -13,12 +14,13 @@ console.log( process.env.npm_package_version, process.env.NODE_ENV )
 const app = express()
 
 //Middlewares
+app.use( compression( { level: 1 } ) )
 app.use( morgan( 'dev' ) )
 app.use( cookie_parser() )
 app.use( body_parser.json() )
 
 //Routes
-app.use( express.static( 'public' ) )
+app.use( express.static( 'public', { maxAge: 3600000 } ) )
 app.use( '/api', require( './api' ) )
 
 //Erreur d'authentification

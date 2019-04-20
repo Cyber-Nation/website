@@ -4,6 +4,7 @@ const router = require( 'express' ).Router()
 const email = require( '../../node_modules/emailjs/email' )
 const speakeasy = require( 'speakeasy' )
 const { check, validationResult } = require( 'express-validator/check' )
+const validate = require( 'validate.js' )
 
 //dépendences internes
 const auth = require( '../utils/auth' )
@@ -158,27 +159,35 @@ router.get( '/profile', auth.required, async ( req, res ) => {
 } ) 
 
 //Mise à jour
-router.post( '/update', 
-    [ 
-        check( 'firstname' ).isLength( { min: 0, max: 30 } ).withMessage( 'Nombre de caractères incorrect' ),
-        check( 'firstname' ).isAlpha( 'fr-FR' ).withMessage( 'Seulement des lettre de l\'alphabet' )
-    ], 
-    auth.required, 
-    async ( req, res ) => {
-    console.log( 'post /update' )
-    const errors = validationResult( req )
-    if ( !errors.isEmpty() ) 
-        return res.status( 422 ).json( errors.array() )
-    
+let constraints = {
+    city: { length: { minimum: 0, maximum: 10, tooLong: 'Maximum 10 caractères' } },
+    firstname: { length: { minimum: 0, maximum: 50, tooLong: 'Maximum 50 caractères' } },
+    lastname: { length: { minimum: 0, maximum: 50, tooLong: 'Maximum 50 caractères' } },
+    sex: { inclusion: [ 'M', 'F' ] },
+    birthDay: { numericality: { onlyInteger: true, greaterThan: 0, lessThanOrEqualTo: 31 } },
+    birthMonth: { numericality: { onlyInteger: true, greaterThan: 0, lessThanOrEqualTo: 12 } },
+    birthYear: { numericality: { onlyInteger: true, greaterThan: 1900, lessThanOrEqualTo: 2019 } },
+    station: { numericality: { onlyInteger: true } },
+    dpt: { numericality: { onlyInteger: true, greaterThan: 0, lessThanOrEqualTo: 999 } },
+}
 
+router.post( '/update',  auth.required, async ( req, res ) => {
+    console.log( 'post /update', req.body )
+    
+    /*const errors = validationResult( req )
+    if ( !errors.isEmpty() ) 
+        return res.status( 422 ).json( errors.array() )*/
+
+    let err = validate( req.body, constraints )
+    if ( err )
+        return res.status( 422 ).json( err )
+    
     const { payload: { email } } = req
-    const { body: { firstname } } = req
     
     let user = await Users.findOne( email )
     if ( user ) {
-        user.firstname = firstname
-        var r = await user.save()
-        if ( r )
+        Object.assign( user, req.body )
+        if ( await user.save() )
             res.sendStatus( 200 )
         else
             res.sendStatus( 204 )

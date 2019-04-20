@@ -1,5 +1,4 @@
 :host {
-    display: flex ;
     position: fixed ;
     top: 0 ;
     left: 0 ;
@@ -9,14 +8,19 @@
     padding: 0 10px 
 }
 
-section {
-    color: white ;
+h2 {
+    font-weight: 400 ;
+    margin: 30 0 10 ;
 }
 
-article {
-    display: flex ;
-    align-items: baseline ;
-    margin: 15px 0 ;
+
+td:first-of-type {
+    text-align: right ;
+    padding-right: 10px ;
+}
+
+td {
+    font-size: 18px ;
 }
 
 input.saved {
@@ -27,17 +31,63 @@ input {
     border: 1px solid lightblue ;
     font-family: inherit ;
     color: var(--back) ;
-    padding: 5px 0 ;
-    margin: 0 15px ;
-    height: 35px ;
+    padding: 5 0 ;
+    margin: 0 ;
+    height: 30px ;
     font-size: inherit ;
     outline: none ;
-    width: 250px ;
+    min-width: 10 ;
+    background-color: lightcyan ;
 }
     input:focus  {
         border: 1px solid dodgerblue ; 
     }
 
+/*date de naissance*/
+input#birthDay, input#birthMonth {
+    width: 2em ;
+    margin: 0 15 0 0 ;
+    text-align: right ;
+}
+input#birthYear  {
+    width: 4em ;
+}
+
+td + td {
+    margin: 0 ;
+    vertical-align: baseline ;
+    display: flex ;
+    align-items: baseline ;
+}
+td + td > label {
+    margin: 0 10 0 0 ;
+}
+/*sexe*/
+input[type=radio] {
+    height: 15 ;
+    margin: 0 20 0 0 ;
+    cursor: pointer ;
+
+}
+    input[type=radio].saved {
+        background-color: red ;
+    }
+label[for=M], label[for=F] {
+    cursor: pointer ;
+    height: 25px ;
+}
+
+/*département*/
+input#dpt {
+    width: 3em ;
+}
+
+/*numéro de bureau de vote*/
+input#station {
+    width: 2em ;
+}
+
+/*étiquette*/
 label {
     font-family: inherit ;
     font-size: inherit;

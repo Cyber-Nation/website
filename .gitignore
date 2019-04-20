@@ -2,5 +2,5 @@
 /public/libs
 /server/ssl
 .env
-
-
+/.vscode
+.vscode

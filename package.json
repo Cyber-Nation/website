@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Cyber-Nation/website#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "compression": "^1.7.4",
     "cookie-parser": "^1.4.4",
     "dotenv": "^7.0.0",
     "emailjs": "^2.2.0",
@@ -27,6 +28,7 @@
     "express-validator": "^5.3.1",
     "ioredis": "^4.9.0",
     "morgan": "^1.9.1",
-    "speakeasy": "^2.0.0"
+    "speakeasy": "^2.0.0",
+    "validate.js": "^0.12.0"
   }
 }
