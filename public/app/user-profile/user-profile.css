@@ -51,6 +51,7 @@ input#birthDay, input#birthMonth {
 }
 input#birthYear  {
     width: 4em ;
+    text-align: center ;
 }
 
 td + td {
@@ -80,11 +81,13 @@ label[for=M], label[for=F] {
 /*département*/
 input#dpt {
     width: 3em ;
+    text-align: center ;
 }
 
 /*numéro de bureau de vote*/
 input#station {
     width: 2em ;
+    text-align: center ;
 }
 
 /*étiquette*/
@@ -111,3 +114,15 @@ button#close {
     button#close:hover {
         color: violet ;
     }
+
+div.nota {
+    margin-top: 20px ;
+    font-size: 80%
+}
+    a {
+        color: white ;
+        text-decoration: none ;
+    }    
+        a:hover {
+            color: violet
+        }
