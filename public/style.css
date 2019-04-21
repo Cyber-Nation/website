@@ -1,6 +1,8 @@
 html {
-    --back:  #002852 ;  /*rgb(19, 55, 111) ;*/
-    --front: lightgray  ;
+    --back: whitesmoke ;  /*rgb(19, 55, 111) ;*/
+    --front: gray /* #002852 */  ;
+    --front2: dimgray ;
+    --front3: black ;
 }
 
 body {
@@ -28,12 +30,12 @@ header {
     }
 
     marquee {
-        color: palevioletred ;
+        color: violet ;
         font-weight: 400 ;
         font-size: 14pt ;
         position: relative ;
         top: -14px ;
-        z-index: 0 ;
+        z-index: -1 ;
     }
 
     header>section {
@@ -45,8 +47,7 @@ header {
     
     header h1 {
         text-align: center ;
-        z-index: 1
-    }
+        }
 
 
 body>section {
@@ -58,10 +59,9 @@ body>section {
     }
 
 h1, h2 {
-    color: var(--front) ;
-    font-weight: 400 ;
-    color: whitesmoke ;
-    margin: 0 ;
+    color: var(--front2) ;
+    font-weight: 500 ;
+        margin: 0 ;
 }
 
 h1 {
@@ -89,7 +89,7 @@ ol {
     counter-reset: li;
 }
     li:hover {
-        color: white;
+        color: var(--front2) ;
     }
 
     ol > li {

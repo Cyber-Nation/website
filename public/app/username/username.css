@@ -12,13 +12,13 @@ a.button {
     }
 
 a.user {
-    color: lightgreen ;
+    color: green ;
     transition: all 0.5s ;
     cursor: pointer ;
     font-weight: 500 ;
 }
     a.user:hover {
-        color: greenyellow ;
+        color: lightgreen ;
         letter-spacing: 1px ;
         transition: letter-spacing 1s ;
         transition: all 1s ;
