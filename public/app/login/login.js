@@ -12,13 +12,13 @@ class LogIn extends HTMLElement {
                     <div>Connectez-vous à l'aide de votre adresse mail :</div>
                     <article>
                         <label for="email">E-mail</label>
-                        <input type="text" name="email" id="email">
+                        <input type="text" name="email" id="email" spellcheck=false pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$">
                         <button id="connect">Connexion</button>
                     </article>
                     <article id="code">
                         <div>Entrez le code de validation reçu par mail :</div>
                         <label for="code">Code</label>
-                        <input type="number" name="code" id="code">
+                        <input type="text" name="code" id="code" pattern="[0-9]{6}">
                         <button id="validate">Validation</button>
                     </article>
                     <output></output>
@@ -88,7 +88,7 @@ class LogIn extends HTMLElement {
                 
             }
             else 
-                output.textContent = 'Code Incorrect'
+                output.textContent = 'Code incorrect'
         }
 
 

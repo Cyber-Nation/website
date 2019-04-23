@@ -8,10 +8,11 @@ customElements.define( 'user-name', class extends HTMLElement {
         super()
         console.debug( '<user-name>' )
         this.attachShadow( { mode: 'open' } )
-            .innerHTML = `
-            <link rel="stylesheet" href="${css}">
-            <output>Connexion...</output>
-        `
+            .innerHTML = //html
+            `
+                <link rel="stylesheet" href="${css}">
+                <output>Connexion...</output>
+            `
     }
 
     async connectedCallback() {
@@ -35,6 +36,7 @@ customElements.define( 'user-name', class extends HTMLElement {
                 output.querySelector( 'a.user' )
                     .onclick = () =>
                         document.body.appendChild( new UserProfile )
+                document.dispatchEvent( new CustomEvent( 'registered', { bubbles: true } ) )
                 break 
             
             case 401:

@@ -10,7 +10,7 @@ body {
     background-color: var(--back);
     color: var(--front) ; /*rgba(255, 255, 255, 0.7);*/
     font-weight: 400 ;
-    font-size: 20px ;
+    font-size: 1em ;
 }
 
 header {
@@ -26,13 +26,13 @@ header {
         right: 0 ; 
         margin-right: 10px ;
         display: block ;
-        height: 15px ; 
+        height: 1em ; 
     }
 
     marquee {
-        color: violet ;
+        color: royalblue ;
         font-weight: 400 ;
-        font-size: 14pt ;
+        font-size: 1em ;
         position: relative ;
         top: -14px ;
         z-index: -1 ;
@@ -61,11 +61,11 @@ body>section {
 h1, h2 {
     color: var(--front2) ;
     font-weight: 500 ;
-        margin: 0 ;
+    margin: 0 ;
 }
 
 h1 {
-    font-size: 35pt ;
+    font-size: 3em;
     transition: letter-spacing 0.5s ease-out;
     letter-spacing: initial ;
     font-weight: 500 ;
@@ -78,7 +78,8 @@ h1 {
     }
 
 h2 { 
-    letter-spacing: 1px
+    letter-spacing: 1px ;
+    font-size: 1.5em
 }
     h2::first-letter {
         text-transform: uppercase;
@@ -116,4 +117,14 @@ a.button {
         letter-spacing: 1px ;
         transition: letter-spacing 1s ;
         transition: all 1s ;
+    }
+
+a#enroll {
+    color: red ;
+    text-decoration: none ;
+    transition: color 0.5s ;
+}
+    a#enroll:hover {
+        color: violet ;
+        transition: color 1s ease-out;        
     }
