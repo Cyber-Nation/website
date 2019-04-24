@@ -1,19 +1,26 @@
 :host {
-    position: fixed ;
+    box-sizing: border-box ;
+    display: block ;
+    background-color: var( --back ) ;
+    padding: 0 10 ;
+    border: 1px solid red ;
     top: 0 ;
     left: 0 ;
-    width: 100% ;
+    margin: 0 ;
+    position: fixed ;
     height: 100vh ;
-    background-color: var( --back ) ;
-    padding: 0 10px 
+    width: 100% ;
+
 }
 
 h2 {
     font-weight: 500 ;
     margin: 30 0 10 ;
     color: var(--front2) ;
+    display: inline-block ;
+    ozutline: 1px solid black ;
+    font-size: 1.5em ;
 }
-
 
 td:first-of-type {
     text-align: right ;
@@ -84,6 +91,7 @@ label[for=M], label[for=F] {
     cursor: pointer ;
     height: 25px ;
     padding-left: 4 ;
+    font-size: 1em ;
 }
 
 /*département*/
@@ -117,7 +125,7 @@ button#close {
     cursor: pointer ;
     position: absolute ;
     top: 10px ;
-    right: 30px ;
+    right: 10px ;
     font-size: 1.5em ;
     background: none ;
 }

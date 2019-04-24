@@ -13,69 +13,55 @@ body {
     font-size: 1em ;
 }
 
-header {
-   display: flex ;
-   align-content: center ;
-   flex-direction: column ;
-   zoutline: 1px solid green ;
-   text-align: center ;
-
-}
+/*Titres*/
     user-name {
         text-align: right ;
         right: 0 ; 
         margin-right: 10px ;
         display: block ;
-        height: 1em ; 
+        dheight: 1em ; 
+        fondt-size: 1rem ;
     }
 
-    marquee {
-        color: royalblue ;
-        font-weight: 400 ;
-        font-size: 1em ;
-        position: relative ;
-        top: -14px ;
-        z-index: -1 ;
-    }
-
-    header>section {
-        display: inline-block ;
+    section.h1 {
+        margin: 0 ;
         width: fit-content ;
         align-items: center ;
         text-align: center ;
     }
-    
-    header h1 {
-        text-align: center ;
+        h1 {
+            font-size: 3em;
+            transition: letter-spacing 0.5s ease-out;
+            letter-spacing: initial ;
+            font-weight: 500 ;
+            zoutline: 1px solid yellow ;
+        
+        }
+            h1:hover {
+                transition: letter-spacing 2s ease-out;
+                letter-spacing: 5px ;
+            }
+
+        marquee {
+            color: royalblue ;
+            font-weight: 400 ;
+            font-size: 1em ;
+            position: relative ;
+            top: -14px ;
+            z-index: -1 ;
         }
 
-
+    
 body>section {
-    margin-top: 40px ;
-    zoutline: 1px solid black ;
+    margin: 20 0 ;
 }
-    body>section:first-of-type {
-        margin-top: 15px ;
-    }
+
 
 h1, h2 {
     color: var(--front2) ;
     font-weight: 500 ;
     margin: 0 ;
 }
-
-h1 {
-    font-size: 3em;
-    transition: letter-spacing 0.5s ease-out;
-    letter-spacing: initial ;
-    font-weight: 500 ;
-    zoutline: 1px solid yellow ;
-
-}
-    h1:hover {
-        transition: letter-spacing 2s ease-out;
-        letter-spacing: 5px ;
-    }
 
 h2 { 
     letter-spacing: 1px ;
@@ -100,11 +86,10 @@ ol {
     ol > li::before {
         content: counter(li); 
         display: inline-block; width: 1em; margin-left: -1.5em;
-        margin-right: 0.5em; text-align: right; direction: rtl}
+        margin-right: 0.5em; text-align: right; direction: rtl ;
+        font-size: 1em ;
+    }
 
-span.cn {
-    font-weight: bold;
-}
 
 a.button {
     cursor: pointer ;

@@ -1,3 +1,7 @@
+:host {
+    font-size: 1em ;
+}
+
 a.button {
     cursor: pointer ;
     color: red ;
