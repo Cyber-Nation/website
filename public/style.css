@@ -8,9 +8,9 @@ html {
 body {
     font-family: 'Segoe UI', Avenir, Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--back);
-    color: var(--front) ; /*rgba(255, 255, 255, 0.7);*/
-    font-weight: 400 ;
-    font-size: 1em ;
+    color: var(--front); /*rgba(255, 255, 255, 0.7);*/
+    font-weight: 400;
+    font-size: 1em;
 }
 
 /*Titres*/
