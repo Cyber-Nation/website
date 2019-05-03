@@ -22,8 +22,10 @@ class UserProfile extends HTMLElement {
         let template = await fetch( html )
         this.shadowRoot.innerHTML = `<link rel=stylesheet href=${css}>` + await template.text()
 
-        this.shadowRoot.querySelector( 'button#close' )
-            .onclick = () => this.parentElement.removeChild( this )
+        this.shadowRoot.querySelector( 'i#close' )
+            .onclick = () => 
+                document.querySelector( 'main' ).innerHTML = '<home-page></home-page>'
+            
         await this.view()  
     }
 

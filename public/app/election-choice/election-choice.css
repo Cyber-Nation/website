@@ -1,11 +1,14 @@
 :host {
-    position: fixed ;
+    box-sizing: border-box ;
+    display: block ;
+    background-color: var( --back ) ;
+    padding: 0 10 ;
     top: 0 ;
     left: 0 ;
-    width: 100% ;
+    margin: 0 ;
+    position: absolute ;
     height: 100vh ;
-    background-color: var( --back ) ;
-    padding: 0 10px 
+    width: 100% ;
 }
 
 h2 {
@@ -15,21 +18,26 @@ h2 {
 }
 
 /*fermer*/
-button#close {
-    border: none ;
-    color: var(--front) ;
-    width: 30px ;
-    height: 30px ;
-    font-weight: 400 ;
+i#close {
     cursor: pointer ;
-    position: absolute ;
+    position: fixed ;
     top: 10px ;
-    right: 30px ;
-    font-size: 18pt ;
-    background: none ;
+    right: 10px ;
+    font-size: 1.2em ;
+    background-color: var(--back) ;
+    border-radius:50% ;
+    width: 1.2em ;
+    height: 1.2em ;
+    text-align: center ;
+    vertical-align: middle ;
+    opacity: 0.8 ;
+    display: inline-block ;
 }
-    button#close:hover {
+    i#close:hover {
         color: green ;
+    }
+    i#close:active {
+        color: red ;
     }
 
 

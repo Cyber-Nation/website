@@ -1,0 +1,73 @@
+h1, h2 {
+    color: var(--front2) ;
+    font-weight: 500 ;
+    margin: 0 ;
+}
+
+h2 { 
+    letter-spacing: 1px ;
+    font-size: 1.5em
+}
+    h2::first-letter {
+        text-transform: uppercase;
+    }
+
+section {
+    margin: 20 0 ;
+}
+
+
+ol {
+    margin: 5px;
+    counter-reset: li;
+}
+    li:hover {
+        color: var(--front2) ;
+    }
+
+    ol > li {
+        list-style-type: none ;
+        counter-increment: li
+    }
+    ol > li::before {
+        content: counter(li); 
+        display: inline-block; width: 1em; margin-left: -1.5em;
+        margin-right: 0.5em; text-align: right; direction: rtl ;
+        font-size: 1em ;
+    }
+
+
+a.button {
+    cursor: pointer ;
+    color: palevioletred ;
+    transition: all 0.5s ;
+    font-weight: 500 ;
+}
+    a.button:hover {
+        color: red ;
+        letter-spacing: 1px ;
+        transition: letter-spacing 1s ;
+        transition: all 1s ;
+    }
+
+/*Candidatures*/
+button#enroll {
+    color: red ;
+    text-decoration: none ;
+    transition: color 0.5s ;
+    border: none ;
+    margin: 0 ;
+    padding: 0 ;
+    font-size: initial ;
+    background: none ;
+    font-family: inherit ;
+    cursor: pointer ;
+}
+    button#enroll:disabled {
+        color: inherit ;
+    }
+
+    button#enroll:hover {
+        color: violet ;
+        transition: color 1s ease-out;        
+    }
