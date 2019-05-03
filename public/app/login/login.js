@@ -15,8 +15,8 @@ class LogIn extends HTMLElement {
                         <input type="text" name="email" id="email" spellcheck=false pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$">
                         <button id="connect">Connexion</button>
                     </article>
+                    <div id=codeDiv>Entrez le code de validation reçu par mail :</div>
                     <article id="code">
-                        <div>Entrez le code de validation reçu par mail :</div>
                         <label for="code">Code</label>
                         <input type="text" name="code" id="code" pattern="[0-9]{6}">
                         <button id="validate">Validation</button>
@@ -34,6 +34,7 @@ class LogIn extends HTMLElement {
         let output = view.querySelector( 'output' )
         let validate = view.querySelector( 'button#validate' )
         let code_article = view.querySelector( 'article#code' )
+        let code_div = view.querySelector( 'div#codeDiv' )
         let code = view.querySelector( 'input#code' )
         let success = view.querySelector( 'output#success' )
 
@@ -56,7 +57,8 @@ class LogIn extends HTMLElement {
             var json = await res.json()
             console.debug( json )
             if ( res.status == 200 ) {
-                code_article.style.display = 'block'
+                code_article.style.display = 'flex'
+                code_div.style.display = 'block'
                 output.textContent = ''
             }
             else {

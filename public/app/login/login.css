@@ -31,7 +31,7 @@ article {
     align-items: baseline ;
     margin: 15px 0 ;
 }
-    article#code {
+    article#code, div#codeDiv {
         display: none ;
     }
         article#code > div {
@@ -49,6 +49,7 @@ button {
     height: 35px ;
     vertical-align: middle ;
     padding: 0 5px ;
+    width: 5.5em ;
 }
 
 input {
@@ -60,7 +61,7 @@ input {
     height: 35px ;
     font-size: inherit ;
     outline: none ;
-    width: 250px ;
+    width: 180px ;
 }
     input:focus, button:focus {
         border: 1px solid dodgerblue ; 
@@ -77,6 +78,7 @@ label {
     font-size: inherit;
     color: var(--front) ;
     margin: 0 ;
+    width: 2.8em ;
 }
 
 output {
