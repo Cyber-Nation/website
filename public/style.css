@@ -104,12 +104,23 @@ a.button {
         transition: all 1s ;
     }
 
-a#enroll {
+/*Candidatures*/
+button#enroll {
     color: red ;
     text-decoration: none ;
     transition: color 0.5s ;
+    border: none ;
+    margin: 0 ;
+    padding: 0 ;
+    font-size: initial ;
+    background: none ;
+    font-family: inherit ;
 }
-    a#enroll:hover {
+    button#enroll:disabled {
+        color: inherit ;
+    }
+
+    button#enroll:hover {
         color: violet ;
         transition: color 1s ease-out;        
     }
