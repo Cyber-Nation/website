@@ -18,17 +18,17 @@
   },
   "homepage": "https://github.com/Cyber-Nation/website#readme",
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.20.2",
     "compression": "^1.7.4",
-    "cookie-parser": "^1.4.4",
-    "dotenv": "^7.0.0",
-    "emailjs": "^2.2.0",
-    "express": "^4.16.4",
-    "express-jwt": "^5.3.1",
-    "express-validator": "^5.3.1",
-    "ioredis": "^4.9.0",
-    "morgan": "^1.9.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "emailjs": "^4.0.3",
+    "express": "^4.19.2",
+    "express-jwt": "^7.7.8",
+    "express-validator": "^7.1.0",
+    "ioredis": "^5.4.1",
+    "morgan": "^1.10.0",
     "speakeasy": "^2.0.0",
-    "validate.js": "^0.12.0"
+    "validate.js": "^0.13.1"
   }
 }
